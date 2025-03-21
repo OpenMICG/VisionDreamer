@@ -1,0 +1,3 @@
+param1: ./results/prior_mesh/10.obj
+param2: ./results/image/10.png
+param3: ./results/gs/gaussiandreamer-sd/A_leather-bound_book_with_gold_details@20250321-174345/save/last_3dgs.ply
