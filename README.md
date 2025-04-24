@@ -1,4 +1,4 @@
-#  VisionDreamer: 2D Vision-Guided 3D Prior Texture Enhancement for Efficient Text-to-3D Generation
+#  VisionDreamer: Prior-Guided Gaussian Splatting for High-Fidelity Text-to-3D Generation
 
 ## [Project Page](https://sites.google.com/view/visiondreamer)
 # :wrench: Install
