@@ -26,11 +26,11 @@
     pip install ./diff-gaussian-rasterization
 
 # :art:  How to Use
-2D Vision-Guided 3D Prior Generation.
+Prior-Guided 3D Mesh Generation.
    
     python prior_generation.py "Input Text" Name
 
-3D Prior-Oriented Texture Enhancement.
+Efficient 3D Gaussians Optimization.
 
     python texture_enhancement.py system.prompt_processor.prompt="Input Text"
 
