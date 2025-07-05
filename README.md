@@ -26,17 +26,23 @@
     pip install ./diff-gaussian-rasterization
 
 # :art:  How to Use
-Visual Prompt Induced Plausible Geometric Mesh Generation.
+Mesh Prior Generation.
    
     python mesh_generation.py "Input Text" Name
 
-Efficient 3D Gaussians Optimization.
+3DGS Model Initialization and Base Optimization.
 
-    python texture_enhancement.py system.prompt_processor.prompt="Input Text"
+    python optimization.py system.prompt_processor.prompt="Input Text"
 
-Optimized 3D Gaussians Mesh Extraction.
+Mesh Extraction From Base Optimized 3DGS model.
    
     python mesh_extraction.py save_path="./results/mesh_extraction/Name"
+
+Mesh-Driven 3DGS Refinement.
+
+    python transmesh.py ./results/mesh_extraction/Name/Name_mesh.obj ./results/mesh_extraction/Name/Name_mesh_albedo.png ./results/mesh_extraction/Name/Name.obj Name
+    python alignment.py Name
+    python refinement.py save_path="./results/mesh_extraction/Name"
 
 # :pray: Anckowledgement
 This repo is based on [InstantMesh](https://github.com/TencentARC/InstantMesh), [GaussianDreamer](https://github.com/hustvl/GaussianDreamer), [DreamGaussian](https://github.com/dreamgaussian/dreamgaussian), [threestudio](https://github.com/threestudio-project/threestudio), [zero123plus](https://github.com/SUDO-AI-3D/zero123plus), and [3DGS](https://github.com/graphdeco-inria/gaussian-splatting).  We would like to express our gratitude for their outstanding work.
