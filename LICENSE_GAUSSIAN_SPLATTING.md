@@ -1,4 +1,4 @@
-Gaussian-Splatting License  
+Gaussian-Splatting License   
 ===========================  
 
 **Inria** and **the Max Planck Institut for Informatik (MPII)** hold all the ownership rights on the *Software* named **gaussian-splatting**.  
