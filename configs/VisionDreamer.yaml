@@ -1,4 +1,4 @@
-name: "VisionDreamer"
+name: "VisionDreamer" 
 tag: "${rmspace:${system.prompt_processor.prompt},_}"
 exp_root_dir: "outputs"
 seed: 1
