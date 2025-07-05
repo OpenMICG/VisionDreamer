@@ -40,7 +40,7 @@ Mesh Extraction From Base Optimized 3DGS model.
 
 Mesh-Driven 3DGS Refinement.
 
-    python transmesh.py ./results/mesh_extraction/Name/Name_mesh.obj ./results/mesh_extraction/Name/Name_mesh_albedo.png ./results/mesh_extraction/Name/Name.obj Name
+    python transmesh.py ./results/mesh_extraction/Name/Name_mesh.obj ./results/mesh_extraction/Name/Name_mesh_albedo.png ./results/trans_mesh/Name/Name.obj Name
     python alignment.py Name
     python refinement.py save_path="./results/mesh_extraction/Name"
 
