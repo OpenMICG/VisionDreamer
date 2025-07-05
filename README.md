@@ -42,7 +42,7 @@ Mesh-Driven 3DGS Refinement.
 
     python transmesh.py ./results/mesh_extraction/Name/Name_mesh.obj ./results/mesh_extraction/Name/Name_mesh_albedo.png ./results/trans_mesh/Name/Name.obj Name
     python alignment.py Name
-    python refinement.py save_path="./results/mesh_extraction/Name"
+    python refinement.py system.prompt_processor.prompt="Input Text"
 
 # :pray: Anckowledgement
 This repo is based on [InstantMesh](https://github.com/TencentARC/InstantMesh), [GaussianDreamer](https://github.com/hustvl/GaussianDreamer), [DreamGaussian](https://github.com/dreamgaussian/dreamgaussian), [threestudio](https://github.com/threestudio-project/threestudio), [zero123plus](https://github.com/SUDO-AI-3D/zero123plus), and [3DGS](https://github.com/graphdeco-inria/gaussian-splatting).  We would like to express our gratitude for their outstanding work.
