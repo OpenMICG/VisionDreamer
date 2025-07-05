@@ -26,9 +26,9 @@
     pip install ./diff-gaussian-rasterization
 
 # :art:  How to Use
-Prior-Guided 3D Mesh Generation.
+Visual Prompt Induced Plausible Geometric Mesh Generation.
    
-    python prior_generation.py "Input Text" Name
+    python mesh_generation.py "Input Text" Name
 
 Efficient 3D Gaussians Optimization.
 
