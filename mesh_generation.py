@@ -235,6 +235,7 @@ for idx, sample in enumerate(outputs):
             return np.dot(vertices, rotation_matrix)
 
 
+
         def process_obj_file(input_file, output_file, angle,angle_z):
             """处理OBJ文件，绕x轴旋转顶点"""
             with open(input_file, 'r') as f:
@@ -266,5 +267,43 @@ for idx, sample in enumerate(outputs):
         rotation_angle = 180  # 旋转角度
         rotation_angle_z = 90
         process_obj_file(input_obj_file, output_obj_file, rotation_angle,rotation_angle_z)
+
+
+        def mirror_mesh_x_with_normals_and_fixed_winding(input_file, output_file):
+            """
+            镜像 OBJ 网格文件（沿 X 轴），修复法线和面片绕序以保持正确光照和朝向。
+            """
+            with open(input_file, 'r') as f:
+                lines = f.readlines()
+
+            with open(output_file, 'w') as f:
+                for line in lines:
+                    if line.startswith("v "):  # 顶点坐标
+                        vertex = np.fromstring(line[2:], dtype=float, sep=' ')
+                        if len(vertex) >= 3:
+                            vertex[0] = -vertex[0]  # 镜像 X 坐标
+                        f.write('v {} {} {}{}\n'.format(
+                            *vertex[:3],
+                            ' ' + ' '.join(map(str, vertex[3:])) if len(vertex) > 3 else ''
+                        ))
+                    elif line.startswith("vn "):  # 顶点法线
+                        normal = np.fromstring(line[3:], dtype=float, sep=' ')
+                        if len(normal) >= 3:
+                            normal[0] = -normal[0]  # 镜像 X 法线
+                        f.write('vn {} {} {}\n'.format(*normal[:3]))
+                    elif line.startswith("f "):  # 面片（顶点顺序翻转）
+                        parts = line.strip().split()
+                        if len(parts) == 4:
+                            v1, v2, v3 = parts[1], parts[2], parts[3]
+                            f.write(f"f {v1} {v3} {v2}\n")  # 翻转 v2 和 v3
+                        else:
+                            f.write(line)
+                    else:
+                        f.write(line)
+
+
+        input_obj_file = mesh_path_idx
+        output_obj_file = mesh_path_idx
+        mirror_mesh_x_with_normals_and_fixed_winding(input_obj_file, output_obj_file)
 
         print(f"3D Mesh saved to {mesh_path_idx}")
