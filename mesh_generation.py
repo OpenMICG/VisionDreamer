@@ -89,12 +89,13 @@ image2_path = "./results/MVimage"
 prior_path = "./results/prior_mesh"
 gs_path = "./results/gs"
 extraction_path = "./results/mesh_extraction"
+trans_mesh="./results/trans_mesh"
 os.makedirs(image_path, exist_ok=True)
 os.makedirs(image2_path, exist_ok=True)
 os.makedirs(prior_path, exist_ok=True)
 os.makedirs(gs_path, exist_ok=True)
 os.makedirs(extraction_path, exist_ok=True)
-
+os.makedirs(trans_mesh, exist_ok=True)
 
 name=args.name
 pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16)
