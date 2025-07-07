@@ -1,4 +1,4 @@
-#  VisionDreamer: 3D Gaussian Splatting based on Mesh Prior for High-Fidelity Text-to-3D Generation
+#  VisionDreamer: High-Fidelity Text-to-3D Generation via Mesh-Guided 3D Gaussian Splatting
 
 ## [Project Page](https://sites.google.com/view/visiondreamer)
 # :wrench: Install
